@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+      <h1>
+        Testando o Vuex
+      </h1>
+      <h4>
+        {{user}}
+      </h4>
+      <hr>
+      <c-users></c-users>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import cUsers from './components/users/main.vue'
 export default {
-  name: 'app',
   components: {
-    HelloWorld
+    cUsers
+  },
+  computed: {
+    user () {
+      const { name, email } = this.$store.state.user
+      return `O usuário logado é ${name} e possui o email ${email}.`
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
