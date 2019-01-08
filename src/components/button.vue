@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="mudarDados">
+        <button :disabled="!hasUser" @click="mudarDados">
             Mudar dados do usuário
         </button>
     </div>
@@ -17,6 +17,11 @@ export default {
             }
 
             this.$store.commit('CHANGE_USER', payload)
+        }
+    },
+    computed: {
+        hasUser () {
+            return this.$store.state.user.name !== ''
         }
     }
 }

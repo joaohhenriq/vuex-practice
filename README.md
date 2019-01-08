@@ -1,4 +1,6 @@
-# vuex-practice
+# Vuex practice
+
+Projeto simples em vue para praticar a utilização do padrão Vuex.
 
 ## Project setup
 ```

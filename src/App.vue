@@ -14,6 +14,17 @@
 <script>
 import cUsers from './components/users/main.vue'
 export default {
+  mounted() {
+    const payload = {
+      name: 'João Henrique',
+      email: 'joao@hotmail.com',
+      level: 'admin'
+    }
+
+    setTimeout(() => {
+      this.$store.commit('CHANGE_USER', payload)
+    }, 3000)
+  },
   components: {
     cUsers
   },

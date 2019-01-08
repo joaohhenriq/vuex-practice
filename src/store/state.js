@@ -1,9 +1,9 @@
 
 export default {
     user: {
-        name: 'João Henrique',
-        email: 'joao@hotmail.com', 
-        level: 'admin'
+        name: '',
+        email: '', 
+        level: ''
     },
-    token: 'testetestetestetesteteste'
+    token: ''
 }
