@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
     methods: {
         mudarDados () {
@@ -16,8 +18,9 @@ export default {
                 level: 'outroLevel'
             }
 
-            this.$store.commit('CHANGE_USER', payload)
-        }
+            this.changeUser(payload)
+        },
+        ...mapActions(['changeUser'])
     },
     computed: {
         hasUser () {

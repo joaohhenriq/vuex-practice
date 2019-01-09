@@ -4,7 +4,7 @@
         Testando o Vuex
       </h1>
       <h4>
-        {{user}}
+        {{user}} {{outraCoisa}}
       </h4>
       <hr>
       <c-users></c-users>
@@ -13,6 +13,8 @@
 
 <script>
 import cUsers from './components/users/main.vue'
+import { mapState, mapActions } from 'vuex'
+
 export default {
   mounted() {
     const payload = {
@@ -22,17 +24,25 @@ export default {
     }
 
     setTimeout(() => {
-      this.$store.commit('CHANGE_USER', payload)
+      this.changeUser(payload)
     }, 3000)
   },
   components: {
     cUsers
   },
   computed: {
-    user () {
-      const { name, email } = this.$store.state.user
-      return `O usuário logado é ${name} e possui o email ${email}.`
-    }
+    outraCoisa () {
+      return 'Mais uma informação!'
+    },
+    ...mapState({
+      user: state => {
+        const { name, email } = state.user
+        return `O usuário logado é ${name} e possui o email ${email}.`
+      }
+    })
+  },
+  methods: {
+    ...mapActions(['changeUser']) // método changeUser passa a ser acessível dentro do component, está mapeado
   }
 }
 </script>
