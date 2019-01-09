@@ -15,7 +15,9 @@ export default {
             const payload = {
                 name: 'Outro nome',
                 email: 'outroemail@hotmail.com',
-                level: 'outroLevel'
+                level: 'outroLevel',
+                city: 'Goiânia',
+                state: 'GO'
             }
 
             this.changeUser(payload)

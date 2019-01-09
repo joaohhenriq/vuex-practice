@@ -20,7 +20,9 @@ export default {
     const payload = {
       name: 'João Henrique',
       email: 'joao@hotmail.com',
-      level: 'admin'
+      level: 'admin',
+      city: 'Goiânia',
+      state: 'GO'
     }
 
     setTimeout(() => {
